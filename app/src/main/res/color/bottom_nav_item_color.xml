@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Tanlangan holat (Active) -->
+    <item android:color="@color/colorPrimary" android:state_checked="true"/>
+    <item android:color="@color/colorPrimaryNight" android:state_checked="true"/>
+
+    <!-- Tanlanmagan holat (Inactive) -->
+    <item android:color="@color/textSecondaryLight" />
+    <item android:color="@color/textSecondaryDark" />
+</selector>

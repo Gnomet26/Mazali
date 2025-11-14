@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottomsheet_rounded"
+    android:padding="20dp">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buyurtmani rasmiylashtirish"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Yetkazib berish manzili -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Yetkazib berish manzili"
+        app:startIconDrawable="@drawable/baseline_location_on_24"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:layout_constraintTop_toBottomOf="@id/textTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPostalAddress"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- To‘lov usuli -->
+    <TextView
+        android:id="@+id/textPaymentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To‘lov usuli"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/inputLayoutAddress"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroupPayment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/textPaymentTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp">
+
+        <RadioButton
+            android:id="@+id/radioOnline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Onlayn to‘lash"
+            android:drawableLeft="@drawable/baseline_payment_24"
+            android:buttonTint="@color/colorPrimary" />
+
+        <RadioButton
+            android:id="@+id/radioCash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Naqd pul (buyurtmani olgach)"
+            android:drawableLeft="@drawable/ic_cash"
+            android:buttonTint="@color/colorPrimary"/>
+    </RadioGroup>
+
+    <!-- Buyurtma berish tugmasi -->
+    <Button
+        android:id="@+id/buttonCheckout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buyurtma berish"
+        android:textStyle="bold"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupPayment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

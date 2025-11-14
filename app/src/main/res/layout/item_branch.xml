@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="@dimen/card_radius"
+    app:cardElevation="@dimen/card_elevation"
+    app:cardBackgroundColor="@color/md_card"
+    app:rippleColor="?attr/colorControlHighlight">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/item_padding">
+
+        <!-- Circular avatar (letter) -->
+        <TextView
+            android:id="@+id/tvAvatar"
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/md_onPrimary"
+            android:background="@drawable/circle_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!-- Primary (viloyat) -->
+        <TextView
+            android:id="@+id/tvPrimary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Viloyat"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/tvAvatar"
+            app:layout_constraintTop_toTopOf="@id/tvAvatar"
+            app:layout_constraintEnd_toStartOf="@id/ivChevron" />
+
+        <!-- Secondary (manzil) -->
+        <TextView
+            android:id="@+id/tvSecondary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:text="Shahar, ko'cha, uy №"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@id/tvAvatar"
+            app:layout_constraintTop_toBottomOf="@id/tvPrimary"
+            app:layout_constraintBottom_toBottomOf="@id/tvAvatar"
+            app:layout_constraintEnd_toStartOf="@id/ivChevron" />
+
+        <!-- Chevron / arrow -->
+        <ImageView
+            android:id="@+id/ivChevron"
+            android:layout_width="@dimen/chevron_size"
+            android:layout_height="@dimen/chevron_size"
+            android:layout_marginStart="8dp"
+            android:contentDescription="Next"
+            android:src="@drawable/ic_chevron_right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:tint="@color/text_secondary" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

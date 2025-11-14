@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.Mazali" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Status bar rangi -->
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Navigatsiya paneli (pastki qism) rangi -->
+        <item name="android:navigationBarColor">@color/backgroundLight</item>
+        <item name="android:windowLightNavigationBar">true</item>
+
+        <!-- Umumiy fon rangi -->
+        <item name="android:colorBackground">@color/backgroundLight</item>
+
+    </style>
+
+    <style name="Widget.Mazali.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@color/surfaceLight</item>
+        <item name="itemIconTint">@color/bottom_nav_item_color</item>
+        <item name="itemTextColor">@color/bottom_nav_item_color</item>
+    </style>
+</resources>

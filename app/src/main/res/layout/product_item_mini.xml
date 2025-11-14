@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingVertical="6dp">
+
+    <ImageView
+        android:id="@+id/imageProductMini"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_foreground"
+        android:background="@drawable/image_bg"
+        android:layout_marginEnd="8dp"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textProductNameMini"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lavash mini"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textProductQtyPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2 x 15 000 so‘m"
+            android:textSize="12sp"
+            android:textColor="#666"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textProductTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30 000 so'm"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+</LinearLayout>

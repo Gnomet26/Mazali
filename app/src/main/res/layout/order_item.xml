@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="8dp"
+    android:background="@drawable/bg_card"
+    android:padding="12dp">
+
+    <!-- 🧾 Collapsed qismi (Header) -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- ⏳ Sana -->
+        <TextView
+            android:id="@+id/textOrderDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="16.10.2025 15:43"
+            android:textSize="14sp"
+            android:textColor="#444" />
+
+        <!-- 💰 Jami summa -->
+        <TextView
+            android:id="@+id/textOrderTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="75 000 so'm"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginEnd="8dp" />
+
+        <!-- 🟢 Status chip -->
+        <TextView
+            android:id="@+id/textOrderStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_status_chip"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:text="Yetkazilmoqda"
+            android:textSize="12sp"
+            android:textColor="@color/white" />
+
+        <!-- ⬇ Expand/Collapse icon -->
+        <ImageView
+            android:id="@+id/imageExpand"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_expand_more"
+            android:layout_marginStart="8dp"
+            app:tint="@color/colorPrimaryDark" />
+    </LinearLayout>
+
+    <!-- 📦 Expanded qismi (Mahsulotlar ro‘yxati) -->
+    <LinearLayout
+        android:id="@+id/expandedLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginTop="10dp">
+
+        <!-- Address -->
+        <TextView
+            android:id="@+id/textOrderAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Manzil: Toshkent, Yakkasaroy tuman..."
+            android:textSize="13sp"
+            android:textColor="#555"
+            android:layout_marginBottom="6dp"/>
+
+        <!-- To'lov usuli -->
+        <TextView
+            android:id="@+id/textOrderPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="To‘lov: Naqd"
+            android:textSize="13sp"
+            android:textColor="#555"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Mahsulotlar ro‘yxati (nested) -->
+        <LinearLayout
+            android:id="@+id/productsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#E53935</color>
+    <color name="colorPrimaryDark">#C62828</color>
+    <color name="colorSecondary">#FFB300</color>
+    <color name="backgroundLight">#FFFFFF</color>
+    <color name="surfaceLight">#FAFAFA</color>
+    <color name="textPrimaryLight">#212121</color>
+    <color name="textSecondaryLight">#757575</color>
+
+    <!-- Dark mode -->
+    <color name="colorPrimaryNight">#FF5252</color>
+    <color name="colorSecondaryNight">#FFC107</color>
+    <color name="backgroundDark">#121212</color>
+    <color name="surfaceDark">#1E1E1E</color>
+    <color name="textPrimaryDark">#FFFFFF</color>
+    <color name="textSecondaryDark">#BDBDBD</color>
+
+
+    <color name="md_bg">#FFFFFF</color>
+    <color name="md_card">#FFFFFF</color>
+    <color name="md_surface">#F7F7F8</color>
+    <color name="md_primary">#E53935</color>
+    <color name="md_onPrimary">#FFFFFF</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="accent">#FFB300</color>
+</resources>

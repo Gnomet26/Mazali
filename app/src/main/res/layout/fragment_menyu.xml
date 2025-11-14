@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.MenyuFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/menyu_theme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardElevation="10dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Menyu"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:padding="10dp"
+        style="@style/Base.Theme.Mazali"/>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/notification_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:clickable="true"
+        android:background="@drawable/backbtn_background"
+        android:src="@drawable/baseline_notifications_24"
+        app:layout_constraintTop_toBottomOf="@id/menyu_theme"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="UseAppTint" />
+
+    <LinearLayout
+        android:id="@+id/search_panel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_box_bg"
+        android:padding="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menyu_theme"
+        app:layout_constraintEnd_toStartOf="@id/notification_btn">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_menu_search"
+            android:tint="@color/backgroundDark"
+            android:layout_marginEnd="8dp"
+            tools:ignore="UseAppTint" />
+
+        <EditText
+            android:id="@+id/editSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mahsulot nomi bo‘yicha qidirish..."
+            android:background="@null"
+            android:padding="4dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/categoriy_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_panel"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp">
+
+        <LinearLayout
+            android:id="@+id/categoryContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/menyu_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/categoriy_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

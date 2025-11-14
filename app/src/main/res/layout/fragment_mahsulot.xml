@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollProduct"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@android:color/white"
+    android:padding="16dp"
+    tools:context=".fragments.MahsulotFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 1) Back & Favorite row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingBottom="8dp">
+
+                <ImageButton
+                    android:id="@+id/buttonBack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/btn_circle_translucent"
+                    android:src="@android:drawable/ic_media_previous"
+                    android:tint="@android:color/black"
+                    android:contentDescription="Back"
+                    tools:ignore="UseAppTint" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/buttonFavorite"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/btn_circle_translucent"
+                    android:src="@android:drawable/btn_star_big_off"
+                    android:tint="@android:color/holo_red_dark"
+                    android:contentDescription="Favourite" />
+            </LinearLayout>
+
+            <!-- 2) Product image -->
+            <ImageView
+                android:id="@+id/imageProduct"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:src="@drawable/img11"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_image_bg" />
+
+            <!-- 3) Title, category and price row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textProductName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Burger Set"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/textCategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Burger"
+                        android:textSize="13sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25 000 so'm"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:layout_marginStart="12dp"/>
+            </LinearLayout>
+
+            <!-- 4) Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E6E6E6"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- 5) Description -->
+            <TextView
+                android:id="@+id/textDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mahsulot tavsifi: yangi pishirilgan go‘sht, xamir, salat va maxsus sous bilan."
+                android:textSize="14sp"
+                android:textColor="@android:color/darker_gray"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginBottom="18dp"/>
+
+            <!-- 6) Quantity selector + total price (optional) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="18dp">
+
+                <!-- Quantity selector -->
+                <LinearLayout
+                    android:id="@+id/quantityContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/quantity_bg"
+                    android:padding="4dp"
+                    android:gravity="center_vertical">
+
+                    <ImageButton
+                        android:id="@+id/buttonMinus"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/btn_circle_white"
+                        android:src="@android:drawable/ic_media_previous"
+                        android:tint="@android:color/black"
+                        android:contentDescription="Minus"
+                        tools:ignore="UseAppTint" />
+
+                    <TextView
+                        android:id="@+id/textQuantity"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black" />
+
+                    <ImageButton
+                        android:id="@+id/buttonPlus"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/btn_circle_white"
+                        android:src="@android:drawable/ic_media_next"
+                        android:tint="@android:color/black"
+                        android:contentDescription="Plus"
+                        tools:ignore="UseAppTint" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <!-- Optional: calculated total price -->
+                <TextView
+                    android:id="@+id/textTotalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jami: 25 000 so'm"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
+
+            <!-- 7) Add to cart button -->
+            <Button
+                android:id="@+id/buttonAddToCart"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Savatchaga qo'shish — 1 ta"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:background="@drawable/btn_add_to_cart"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
