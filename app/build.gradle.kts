@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
     id("kotlin-parcelize")
     id("androidx.navigation.safeargs.kotlin") // 🧭 Safe Args plugin shu yerda
 }
@@ -40,6 +41,19 @@ android {
 }
 
 dependencies {
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0") // Or the latest stable version
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")// Or the latest stable version
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    // OkHttp Logging Interceptor
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.1") // Or the latest stable version
+    // Gson (if not already included by converter-gson)
+    implementation("com.google.code.gson:gson:2.10.1") // Or the latest stable version
+
+    implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-messaging-ktx")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
