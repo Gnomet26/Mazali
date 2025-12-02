@@ -43,6 +43,7 @@ class MenuAdapter(private val foodList: List<FoodItem>) :
                 putInt("foodImage", food.imageResId)
                 putString("foodCategory", food.category)
                 putString("foodDescription", food.description)
+
             }
 
             // 🔄 ProductFragmentga o‘tish
