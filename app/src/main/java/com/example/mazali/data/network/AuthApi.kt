@@ -1,13 +1,16 @@
 package com.example.mazali.data.network
 
+import com.example.mazali.data.FoodItem
 import com.example.mazali.data.model.LoginRequest
 import com.example.mazali.data.model.LoginResponse
 import com.example.mazali.data.model.RegisterRequest
 import com.example.mazali.data.model.RegisterResponse
 import com.example.mazali.data.model.UpdateRequest
 import com.example.mazali.data.model.UserDto
+import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Query
 import retrofit2.http.Header

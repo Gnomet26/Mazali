@@ -32,12 +32,11 @@ class ProfilFragment : Fragment() {
     private lateinit var userAvatar: ImageView
     private lateinit var themeSwitch: Switch
     private lateinit var tahrirlashBtn: TextView
-    private lateinit var languageBtn: TextView
+    private lateinit var ai_bot: TextView
     private lateinit var connectBtn: TextView
     private lateinit var filialBtn: TextView
     private lateinit var authBtn: TextView
     private lateinit var loadingOverlay: ConstraintLayout
-    private lateinit var dialog: AlertDialog
 
     private val viewModel: AuthViewModel by viewModels {
         val repository = AuthRepository(RetrofitClient.authApi)
@@ -54,7 +53,7 @@ class ProfilFragment : Fragment() {
         userAvatar = view.findViewById(R.id.base_avatar)
         themeSwitch = view.findViewById(R.id.theme_rejim)
         tahrirlashBtn = view.findViewById(R.id.tahrirlash_btn)
-        languageBtn = view.findViewById(R.id.language_btn)
+        ai_bot = view.findViewById(R.id.language_btn)
         connectBtn = view.findViewById(R.id.connect_btn)
         filialBtn = view.findViewById(R.id.filial_btn)
         authBtn = view.findViewById(R.id.auth_btn)
@@ -117,7 +116,11 @@ class ProfilFragment : Fragment() {
         val languageDialogView = inflater.inflate(R.layout.language_sheet, null)
         val languageDialog = context?.let { BottomSheetDialog(it) }
         languageDialog?.setContentView(languageDialogView)
-        languageBtn.setOnClickListener { languageDialog?.show() }
+        ai_bot.setOnClickListener {
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.user_frame, ChatFragment())
+                ?.commit()
+        }
 
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.authState.collectLatest { state ->

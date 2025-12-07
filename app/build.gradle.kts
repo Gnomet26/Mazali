@@ -42,6 +42,11 @@ android {
 
 dependencies {
 
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+// viewModelScope uchun
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+// coroutine uchun
+
     implementation("com.squareup.retrofit2:retrofit:2.9.0") // Or the latest stable version
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")// Or the latest stable version
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
@@ -53,6 +58,8 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-messaging-ktx")
+
+    implementation("com.google.android.gms:play-services-location:21.2.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

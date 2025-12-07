@@ -28,4 +28,9 @@
     <color name="text_primary">#212121</color>
     <color name="text_secondary">#757575</color>
     <color name="accent">#FFB300</color>
+
+    <color name="red">#FF3B30</color>
+    <color name="teal_700">#00796B</color>
+
+    <color name="gray_light">#F5F5F5</color>
 </resources>

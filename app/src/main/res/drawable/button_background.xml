@@ -1,0 +1,8 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/white"/> <!-- Bosilmagan fon rangi -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/red"/> <!-- Border qizil -->
+    <corners android:radius="8dp"/>
+</shape>

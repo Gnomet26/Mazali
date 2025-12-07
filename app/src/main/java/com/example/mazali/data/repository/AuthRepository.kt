@@ -1,9 +1,7 @@
 package com.example.mazali.data.repository
 
-import android.content.Context
 import com.example.mazali.data.model.*
 import com.example.mazali.data.network.AuthApi
-import com.example.mazali.utils.PrefsManager
 import retrofit2.HttpException
 import java.io.IOException
 

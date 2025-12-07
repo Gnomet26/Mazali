@@ -8,6 +8,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.mazali.Consts
 import com.example.mazali.R
 import com.example.mazali.data.FoodItem
 import com.example.mazali.data.Order
@@ -43,17 +44,14 @@ class OrderAdapter(
         holder.textOrderAddress.text = "Manzil: ${order.address}"
         holder.textOrderPayment.text = "To‘lov: ${order.paymentMethod}"
 
-        // Expand/Collapse icon
         holder.imageExpand.rotation = if (order.isExpanded) 180f else 0f
         holder.expandedLayout.visibility = if (order.isExpanded) View.VISIBLE else View.GONE
 
-        // Header bosilganda expand/collapse qilish
         holder.headerLayout.setOnClickListener {
             order.isExpanded = !order.isExpanded
             notifyItemChanged(position)
         }
 
-        // Expanded ichidagi mahsulotlarni tozalab qaytadan qo‘shamiz
         holder.productsContainer.removeAllViews()
         for (product in order.products) {
             val itemView = LayoutInflater.from(holder.itemView.context)
@@ -70,7 +68,7 @@ class OrderAdapter(
             textTotal.text = "${cleanPrice * product.quantity} so'm"
 
             Glide.with(holder.itemView.context)
-                .load(product.imageResId)
+                .load(Consts().BASE_URL+product.image)
                 .placeholder(R.drawable.ic_launcher_foreground)
                 .into(imageProduct)
 

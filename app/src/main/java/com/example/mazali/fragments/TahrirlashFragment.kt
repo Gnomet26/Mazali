@@ -135,6 +135,7 @@ class TahrirlashFragment : Fragment() {
                     }
                     is AuthState.Success -> {
                         loadingOverlay.visibility = View.GONE
+                        PrefsManager.saveUserData(requireContext(), editName.text.toString(), userPhone.text.toString())
                         Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
                     }
                     is AuthState.Error -> {

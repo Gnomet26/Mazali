@@ -10,6 +10,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.mazali.R
 import com.example.mazali.data.FoodItem
 import com.example.mazali.utils.PrefsManager
@@ -40,18 +41,20 @@ class MahsulotFragment : Fragment() {
         val buttonAddToCart: Button = rootView.findViewById(R.id.buttonAddToCart)
         val textTotalPrice: TextView = rootView.findViewById(R.id.textTotalPrice)
 
-        // 📥 Bundle'dan olinadi
         val productName = arguments?.getString("foodName")
         val productPriceString = arguments?.getString("foodPrice")
-        val productImageRes = arguments?.getInt("foodImage") ?: 0
+        val productImageRes = arguments?.getString("foodImage") ?: "none"
         val productCategory = arguments?.getString("foodCategory")
         val productDescription = arguments?.getString("foodDescription") ?: ""
+        val productId = arguments?.getInt("foodID") ?: 0
 
         val unitPrice: Int = productPriceString?.filter { it.isDigit() }?.toIntOrNull() ?: 0
 
         textProductName.text = productName ?: "Noma'lum mahsulot"
         textPrice.text = productPriceString ?: "0 so'm"
-        imageProduct.setImageResource(productImageRes)
+        Glide.with(requireContext())
+            .load(productImageRes)
+            .into(imageProduct)
         textDescription.text = productDescription
 
         var qty = 1
@@ -85,11 +88,12 @@ class MahsulotFragment : Fragment() {
                 cartList[existingIndex].quantity += qty
             } else {
                 val newItem = FoodItem(
+                    id = productId,
                     name = productName ?: "Noma'lum",
                     price = productPriceString ?: "0 so'm",
-                    imageResId = productImageRes,
+                    image = productImageRes,
                     category = productCategory ?: "Kategoriya yo'q",
-                    description = productDescription,
+                    comment = productDescription,
                     quantity = qty
                 )
                 cartList.add(newItem)

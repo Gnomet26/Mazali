@@ -22,7 +22,7 @@ class RootFragment : Fragment() {
         rootView = inflater.inflate(R.layout.fragment_root, container, false)
         val bottomNav = rootView.findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
-        // 📌 1. SharedPreferences orqali oxirgi tanlangan itemni yuklab olish
+
         val prefs = requireContext().getSharedPreferences("nav_prefs", Context.MODE_PRIVATE)
         val savedItemId = prefs.getInt("selected_item_id", R.id.item_home)
         bottomNav.selectedItemId = savedItemId

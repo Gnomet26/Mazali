@@ -16,7 +16,7 @@
 
         <!-- Mahsulot rasmi -->
         <ImageView
-            android:id="@+id/imageProduct"
+            android:id="@+id/imageProduct1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_alignParentStart="true"
@@ -31,13 +31,13 @@
             android:id="@+id/textProductName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/imageProduct"
+            android:layout_toEndOf="@id/imageProduct1"
             android:layout_marginStart="12dp"
             android:text="Burger Set"
             android:textStyle="bold"
             android:textSize="16sp"
             android:textColor="#000000"
-            android:layout_alignTop="@id/imageProduct"/>
+            android:layout_alignTop="@id/imageProduct1"/>
 
         <!-- Kategoriya -->
         <TextView
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textProductName"
-            android:layout_toEndOf="@id/imageProduct"
+            android:layout_toEndOf="@id/imageProduct1"
             android:layout_marginStart="12dp"
             android:layout_marginTop="4dp"
             android:text="Burger"
@@ -57,8 +57,8 @@
             android:id="@+id/textPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/imageProduct"
-            android:layout_toEndOf="@id/imageProduct"
+            android:layout_alignBottom="@id/imageProduct1"
+            android:layout_toEndOf="@id/imageProduct1"
             android:layout_marginStart="12dp"
             android:text="25 000 so'm"
             android:textStyle="bold"
@@ -70,7 +70,7 @@
             android:id="@+id/quantityLayout"
             android:layout_width="wrap_content"
             android:layout_height="36dp"
-            android:layout_below="@id/imageProduct"
+            android:layout_below="@id/imageProduct1"
             android:layout_alignParentStart="true"
             android:layout_marginTop="8dp"
             android:orientation="horizontal"

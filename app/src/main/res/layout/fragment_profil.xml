@@ -121,13 +121,13 @@
                         android:id="@+id/language_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/baseline_language_24"
+                        android:drawableLeft="@drawable/ic_chatbot"
                         android:drawablePadding="10dp"
                         android:minHeight="48dp"
                         android:padding="10dp"
                         android:clickable="true"
                         android:background="@drawable/item_ripple"
-                        android:text="Ilova tili"
+                        android:text="Maslahatchi AI"
                         android:textSize="18sp"
                         tools:ignore="RtlHardcoded,UseCompatTextViewDrawableXml" />
                     <View

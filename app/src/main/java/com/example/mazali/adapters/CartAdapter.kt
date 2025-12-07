@@ -1,15 +1,22 @@
 package com.example.mazali.adapters
 
-import android.media.Image
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.mazali.Consts
 import com.example.mazali.R
 import com.example.mazali.data.FoodItem
+import kotlin.contracts.contract
+import kotlin.coroutines.coroutineContext
+import kotlin.math.log
+
+private lateinit var imageResource: String
 
 class CartAdapter(
     private val cartItems: MutableList<FoodItem>,
@@ -20,9 +27,8 @@ class CartAdapter(
         fun onQuantityChanged()
         fun onItemDeleted(position: Int)
     }
-
-    inner class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val image: ImageView = itemView.findViewById(R.id.imageProduct)
+    class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val product_image: ImageView = itemView.findViewById(R.id.imageProduct1)
         val name: TextView = itemView.findViewById(R.id.textProductName)
         val category: TextView = itemView.findViewById(R.id.textCategory)
         val price: TextView = itemView.findViewById(R.id.textPrice)
@@ -41,12 +47,15 @@ class CartAdapter(
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
         val item = cartItems[position]
 
-        holder.image.setImageResource(item.imageResId)
+        Glide.with(holder.itemView.context)
+            .load(item.image)
+            .into(holder.product_image)
         holder.name.text = item.name
         holder.category.text = item.category
         holder.price.text = item.price
         holder.qty.text = item.quantity.toString()
 
+        Log.d("TTEST",Consts().BASE_URL + item.image)
         // ➖ Miqdorni kamaytirish
         holder.minus.setOnClickListener {
             if (item.quantity > 1) {
@@ -77,6 +86,5 @@ class CartAdapter(
             listener.onItemDeleted(position)
         }
     }
-
     override fun getItemCount(): Int = cartItems.size
 }
